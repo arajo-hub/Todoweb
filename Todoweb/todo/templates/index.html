@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To do List</title>
+    {# font #}
+    <link href="https://fonts.googleapis.com/css?family=Happy+Monkey|Kaushan+Script&display=swap" rel="stylesheet">
+    {# bootstrap #}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    {# css #}
+    <link rel="stylesheet" href="{% static 'css/todo.css' %}">
+  </head>
+
+  <body>
+    {# title과 login 메뉴#}
+    <div class="centerstage">
+      <div class="container">
+        <span><a class="title" href="{% url 'todo:todo_list' %}">My To do List</a>
+        <a class="menu" href="{% url 'todo:createtodo' %}">Add todo</a>
+        {% if user.is_authenticated %}
+          <a class="menu" href="{% url 'logout' %}">Logout</a>
+          <a class="menu">Hello, {{ user.username }}</a>
+        {% else %}
+          <a class="menu" href="{% url 'login' %}">Login</a>
+        {% endif %}
+        </span>
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,18 @@
+.title {
+  font-family: 'Kaushan Script', cursive;
+  font-size:40pt;
+}
+
+.centerstage{
+  margin-bottom:100px;
+}
+
+.menu{
+  font-family: 'Happy Monkey', cursive;
+  color:gray;
+  margin-left:20px;
+}
+
+.loginlink:hover{
+  color:black;
+}

@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="centerstage">
+  <div class="container">
+    {% for Todo in todos %}
+    <div class="post">
+      <h3><a class="todolist" href="{% url 'todo:detail' pk=Todo.pk %}">{{ Todo.todo }}</a></h3>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="centerstage">
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Login</h1>
+      <p class="lead">ONLY SUPERUSER can login.</p>
+      <hr class="my-4">
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+      <input type="submit" class='btn btn-primary' value="Login"/>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
