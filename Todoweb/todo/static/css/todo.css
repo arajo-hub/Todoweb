@@ -1,6 +1,17 @@
 .title {
   font-family: 'Kaushan Script', cursive;
   font-size:40pt;
+  text-decoration:none;
+  color:inherit;
+}
+
+.title:hover{
+  color:black;
+  text-decoration:none;
+}
+
+.title2{
+  font-family: 'Kaushan Script', cursive;
 }
 
 .centerstage{
@@ -8,11 +19,21 @@
 }
 
 .menu{
-  font-family: 'Happy Monkey', cursive;
+  font-family: 'Bellota', cursive;
+  font-size:20px;
   color:gray;
   margin-left:20px;
 }
 
 .loginlink:hover{
   color:black;
+}
+
+.todolist{
+  font-family:'Walter Turncoat', cursive;
+  color:gray;
+}
+
+.todolist:hover{
+  color:inherit;
 }
